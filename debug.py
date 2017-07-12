@@ -15,7 +15,7 @@ def filetree(root, path="", exep=[".py", ".md"]):
     # Get files in current folder:
     files = sorted(os.listdir(root))
     files_filtered = [item for item in files if (not item.startswith(".") and
-                                                 not os.path.splitext(item)[1] in exep)]
+                                                 not os.path.splitext(item)[-1] in exep)]
     nfiles = len(files_filtered)
 
     # Print the content of the current folder:
